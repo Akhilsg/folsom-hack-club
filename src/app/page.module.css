@@ -1,150 +1,473 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* ---------- hero ---------- */
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.hero {
+  padding-block: 170px 130px;
+  color: var(--white);
+  background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  gap: 56px;
 }
 
-.main {
+.prompt {
+  margin-bottom: 18px;
+  font: 1rem var(--mono);
+  color: var(--muted);
+}
+
+.prompt span {
+  color: var(--green);
+}
+
+.title {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.title span {
+  display: block;
+  padding-bottom: 0.08em;
+}
+
+.lead {
+  max-width: 34ch;
+  margin-top: 24px;
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--smoke);
+}
+
+.actions {
   display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
+  flex-wrap: wrap;
   gap: 16px;
-  font-size: 14px;
+  margin-top: 36px;
 }
 
-.ctas a {
+.ticket {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 350px;
+  padding: 30px 28px 26px;
+  color: var(--black);
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  transform: rotate(2deg);
+}
+
+/* a strip of tape holding the card up */
+.ticket::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 96px;
+  height: 28px;
+  background: rgba(241, 196, 15, 0.85);
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.ticketLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.ticketDate {
+  margin-top: 2px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ticketRows {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding-top: 18px;
+  border-top: 2px dashed var(--smoke);
+}
+
+.ticketRows div {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ticketRows dt {
+  color: var(--muted);
+}
+
+.ticketRows dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* ---------- build ideas strip ---------- */
+
+/* keeps the tilted strip's corners from making the page scroll sideways */
+.stripClip {
+  position: relative;
+  z-index: 2;
+  margin-top: -44px;
+  padding-block: 20px;
+  overflow: hidden;
+}
+
+.strip {
+  margin-inline: -20px;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--red);
+  box-shadow: var(--shadow-elevated);
+  transform: rotate(-1.5deg);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 50s linear infinite;
+}
+
+.track span {
+  padding-block: 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.track span::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 26px;
+  vertical-align: middle;
+  background: var(--yellow);
+  transform: rotate(45deg);
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- shared section bits ---------- */
+
+.section {
+  padding-block: 110px;
+}
+
+/* ---------- about ---------- */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 64px;
+}
+
+.aboutBody {
+  display: grid;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: var(--slate);
+}
+
+.aboutBody a {
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ---------- who ---------- */
+
+.who {
+  background: var(--white);
+  border-block: 1px solid var(--smoke);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.card {
+  padding: 28px;
+  background: var(--snow);
+  border-top: 6px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 10px;
+  color: var(--slate);
+}
+
+.fineprint {
+  margin-top: 36px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ---------- meetings ---------- */
+
+.meetings {
+  padding-block: 120px;
+  color: var(--white);
+  background: var(--dark);
+}
+
+.meetings .eyebrow {
+  color: var(--orange);
+}
+
+.meetGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  gap: 88px;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+/* looks like the sign next to the classroom door */
+.placard {
+  position: relative;
+  padding: 30px 44px 22px;
+  text-align: center;
+  background: var(--steel);
+  border: 3px solid #3f5068;
+  border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.5);
+  transform: rotate(-3deg);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.placard::before,
+.placard::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--muted), var(--slate));
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.placard::before {
+  left: 12px;
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.placard::after {
+  right: 12px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.room {
+  font-size: clamp(4.5rem, 12vw, 7.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
-.code {
-  font-family: var(--font-geist-mono);
-  font-size: 0.9em;
-  background: color-mix(in srgb, currentColor 8%, transparent);
-  padding: 0.1em 0.4em;
-  border-radius: 6px;
+.placardSub {
+  margin-top: 12px;
+  padding-top: 10px;
+  font: 700 0.8rem var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  border-top: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.sticker {
+  position: absolute;
+  right: -26px;
+  bottom: -30px;
+  width: 76px;
+  height: 76px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  transform: rotate(14deg);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: start;
+  gap: 16px 56px;
+  margin: 36px 0 0;
+}
+
+.facts dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.note {
+  max-width: 52ch;
+  margin-top: 32px;
+  color: var(--smoke);
+}
+
+.note strong {
+  color: var(--white);
+}
+
+.note a {
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* ---------- join ---------- */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin: 56px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  padding-top: 24px;
+  border-top: 3px solid var(--black);
+}
+
+.stepNum {
+  font: 700 3.5rem/1 var(--mono);
+}
+
+.step h3 {
+  margin-top: 14px;
+  font-size: 1.5rem;
+}
+
+.step p {
+  margin-top: 8px;
+  color: var(--slate);
+}
+
+.stepLink {
+  display: inline-block;
+  margin-top: 14px;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.stepLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- photos ---------- */
+
+.photos {
+  background-color: #eef1f5;
+  background-image: radial-gradient(#d3dae3 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  border-top: 1px solid var(--smoke);
+}
+
+/* ---------- call to action ---------- */
+
+.cta {
+  padding-block: 100px;
+  text-align: center;
+  color: var(--white);
+  background-image: var(--cta);
+}
+
+.cta h2 {
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  line-height: 1;
+}
+
+.cta p {
+  margin-top: 16px;
+  font-size: 1.3rem;
+}
+
+.cta .ctaButton {
+  margin-top: 32px;
+  color: var(--red);
+  background: var(--white);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 880px) {
+  .hero {
+    padding-block: 130px 100px;
+  }
+
+  .heroInner,
+  .about,
+  .meetGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket {
+    justify-self: start;
+    transform: rotate(-1.5deg);
+  }
+
+  .section,
+  .meetings {
+    padding-block: 80px;
+  }
+
+  .about {
+    gap: 24px;
+  }
+
+  .cards,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .meetGrid {
+    gap: 64px;
+  }
+
+  .placard {
+    justify-self: start;
+  }
+
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
 }

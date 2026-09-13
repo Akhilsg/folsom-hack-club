@@ -1,0 +1,151 @@
+.header {
+  padding-block: 160px 170px;
+  color: var(--white);
+  background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.header h1 {
+  margin-top: 8px;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 0.95;
+}
+
+.header .eyebrow {
+  color: var(--orange);
+}
+
+.lead {
+  max-width: 44ch;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: var(--smoke);
+}
+
+.body {
+  padding-block: 0 110px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: start;
+  gap: 56px;
+}
+
+.formCard {
+  position: relative;
+  margin-top: -120px;
+  padding: 32px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elevated);
+}
+
+.methods {
+  display: grid;
+  margin: 0;
+  padding: 36px 0 0;
+  list-style: none;
+}
+
+.method {
+  padding-block: 18px;
+  border-bottom: 1px solid var(--smoke);
+}
+
+.methodLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.methodValue {
+  display: block;
+  margin-top: 2px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a.methodValue:hover {
+  color: var(--red);
+}
+
+.methodNote {
+  color: var(--slate);
+}
+
+.faq {
+  margin-top: 96px;
+}
+
+.faqList {
+  display: grid;
+  gap: 12px;
+  max-width: 780px;
+  margin-top: 32px;
+}
+
+.faqItem {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.faqItem summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: "+";
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--red);
+  transition: transform 0.15s ease;
+}
+
+.faqItem[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faqItem p {
+  padding: 0 24px 22px;
+  color: var(--slate);
+}
+
+@media (max-width: 880px) {
+  .header {
+    padding-block: 130px 140px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .formCard {
+    margin-top: -100px;
+    padding: 24px;
+  }
+
+  .methods {
+    padding-top: 8px;
+  }
+}
