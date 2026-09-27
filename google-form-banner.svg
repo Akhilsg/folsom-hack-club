@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#ff8c37"/>
+      <stop offset="1" stop-color="#ec3750"/>
+    </linearGradient>
+    <linearGradient id="code" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#338eda"/>
+      <stop offset="1" stop-color="#a633d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="400" fill="#17171d"/>
+  <path d="M0 0h1600v14H0z" fill="url(#accent)"/>
+  <circle cx="1375" cy="204" r="186" fill="#252429"/>
+  <circle cx="1375" cy="204" r="146" fill="none" stroke="#3c4858" stroke-width="2" stroke-dasharray="9 13"/>
+  <path d="M1282 164l-39 40 39 40M1468 164l39 40-39 40M1410 144l-69 120" fill="none" stroke="url(#code)" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="95" y="83" width="385" height="52" rx="26" fill="#252429" stroke="#3c4858"/>
+  <text x="126" y="117" fill="#33d6a6" font-family="Menlo,Consolas,monospace" font-size="24">~/fhs $ join the club</text>
+  <text x="96" y="225" fill="#ffffff" font-family="Arial,sans-serif" font-size="76" font-weight="700">Folsom Hack Club</text>
+  <text x="100" y="284" fill="#e0e6ed" font-family="Arial,sans-serif" font-size="30">Make websites, games, bots, hardware — whatever you’re into.</text>
+  <rect x="98" y="319" width="304" height="7" rx="3.5" fill="url(#accent)"/>
+</svg>

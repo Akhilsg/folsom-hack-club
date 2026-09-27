@@ -1,0 +1,324 @@
+/* ---------- header ---------- */
+
+.header {
+  padding-block: 160px 190px;
+  color: var(--white);
+  background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.header :global(.eyebrow) {
+  color: var(--orange);
+}
+
+.header h1 {
+  max-width: 14ch;
+  margin-top: 8px;
+  font-size: clamp(3rem, 9vw, 6rem);
+  line-height: 0.95;
+}
+
+.lead {
+  max-width: 46ch;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: var(--smoke);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- officers ---------- */
+
+.officersSection {
+  position: relative;
+  margin-top: -130px;
+}
+
+.officers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.officer {
+  overflow: hidden;
+  background: var(--white);
+  border-top: 6px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elevated);
+  transition: transform 0.125s ease-in-out, box-shadow 0.125s ease-in-out;
+}
+
+.officer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0625), 0 14px 24px rgba(0, 0, 0, 0.16);
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--smoke);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  background-color: var(--accent);
+  background-image:
+    radial-gradient(ellipse farthest-corner at top left, rgba(255, 255, 255, 0.28), transparent 70%),
+    radial-gradient(rgba(255, 255, 255, 0.18) 1.2px, transparent 1.2px);
+  background-size: auto, 16px 16px;
+}
+
+.initials {
+  font-size: clamp(3.5rem, 7vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.soon {
+  padding: 3px 10px;
+  font: 600 0.72rem var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+}
+
+.officerBody {
+  padding: 20px 22px 24px;
+}
+
+.role {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.officerBody h3 {
+  margin-top: 4px;
+  font-size: 1.5rem;
+}
+
+.grade {
+  margin-top: 2px;
+  color: var(--slate);
+}
+
+.reachUs {
+  margin-top: 28px;
+  font-size: 1.1rem;
+  color: var(--slate);
+}
+
+.reachUs a {
+  font-weight: 700;
+  color: var(--red);
+}
+
+/* ---------- mission & values ---------- */
+
+.section {
+  padding-block: 110px;
+}
+
+.mission {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 64px;
+}
+
+.missionBody {
+  display: grid;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: var(--slate);
+}
+
+.missionBody a {
+  font-weight: 700;
+  color: var(--red);
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 72px;
+}
+
+.value {
+  padding-top: 24px;
+  border-top: 3px solid var(--black);
+}
+
+.valueNum {
+  font: 700 3.5rem/1 var(--mono);
+}
+
+.value h3 {
+  margin-top: 14px;
+  font-size: 1.5rem;
+}
+
+.value p {
+  margin-top: 8px;
+  color: var(--slate);
+}
+
+/* ---------- meetings ---------- */
+
+.meetings {
+  padding-block: 110px;
+  color: var(--white);
+  background: var(--dark);
+}
+
+.meetings :global(.eyebrow) {
+  color: var(--orange);
+}
+
+.meetingsLead {
+  margin-top: 16px;
+  font-size: 1.25rem;
+  color: var(--smoke);
+}
+
+.weeks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.week {
+  padding: 28px;
+  background: var(--darkless);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+}
+
+.weekTag {
+  display: inline-block;
+  padding: 4px 12px;
+  font: 700 0.8rem var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 999px;
+}
+
+.week:nth-child(2) .weekTag {
+  background: var(--yellow);
+}
+
+.week h3 {
+  margin-top: 16px;
+  font-size: 1.6rem;
+}
+
+.week p:last-child {
+  margin-top: 8px;
+  color: var(--smoke);
+}
+
+/* ---------- call to action ---------- */
+
+.cta {
+  padding-block: 100px;
+  text-align: center;
+  color: var(--white);
+  background-image: var(--cta);
+}
+
+.cta h2 {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.cta p {
+  max-width: 46ch;
+  margin: 16px auto 0;
+  font-size: 1.3rem;
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cta .ctaButton {
+  color: var(--red);
+  background: var(--white);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 1000px) {
+  .officers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 880px) {
+  .header {
+    padding-block: 130px 160px;
+  }
+
+  .section,
+  .meetings {
+    padding-block: 80px;
+  }
+
+  .mission,
+  .values,
+  .weeks {
+    grid-template-columns: 1fr;
+  }
+
+  .mission {
+    gap: 24px;
+  }
+
+  .values {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 560px) {
+  .officers {
+    grid-template-columns: 1fr;
+  }
+}

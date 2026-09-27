@@ -13,12 +13,18 @@ export const site = {
     endsAt: { hour: 16, minute: 30 },
   },
 
-  // TODO: swap these placeholders for the real ones.
-  email: "folsomhackclub@example.com",
-  instagram: "folsomhackclub",
-  interestForm: "https://forms.gle/REPLACE_ME",
+  email: "fhshackclub@gmail.com",
+  instagram: "fhshack_club",
 
   slack: "https://hackclub.com/slack",
+
+  // Shown on /about. To add a photo, drop `<photo>.jpg` (or .png/.webp) into public/officers/.
+  officers: [
+    { name: "Taksh Nahata", role: "President", grade: "Junior", photo: "taksh" },
+    { name: "Akhil Gupta", role: "Vice President", grade: "Junior", photo: "akhil" },
+    { name: "Shivam Sharma", role: "Secretary", grade: "Junior", photo: "shivam" },
+    { name: "Surya Mandalapu", role: "Treasurer", grade: "Junior", photo: "surya" },
+  ],
 };
 
 export const instagramUrl = `https://instagram.com/${site.instagram}`;

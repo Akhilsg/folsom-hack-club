@@ -18,12 +18,12 @@ export default function Footer() {
           />
           <p className={styles.name}>{site.school} Hack Club</p>
           <p className={styles.blurb}>
-            A student-run club, and part of <a href="https://hackclub.com">Hack Club</a>, a global
-            nonprofit network of high school coding clubs.
+            A student-run club at FHS. We&apos;re part of <a href="https://hackclub.com">Hack Club</a>,
+            a nonprofit for high school coding clubs.
           </p>
         </div>
         <nav className={styles.links} aria-label="Footer">
-          <Link href="/#about">About</Link>
+          <Link href="/about">About us</Link>
           <Link href="/#meetings">Meetings</Link>
           <Link href="/#join">Join</Link>
           <Link href="/#photos">Photos</Link>

@@ -7,11 +7,10 @@ export const metadata: Metadata = {
     template: "%s · Folsom Hack Club",
   },
   description:
-    "Folsom High School's Hack Club: a student-run coding club that meets every other Monday in F204, 3:40–4:30 PM. No experience needed.",
-  icons: {
-    icon: "https://assets.hackclub.com/icon-rounded.png",
-    apple: "https://assets.hackclub.com/icon-rounded.png",
-  },
+    "Folsom High School's student-run coding club. We meet every other Monday in F204 from 3:40 to 4:30 PM. No experience needed.",
+  // Icons come from app/favicon.ico, app/icon.png and app/apple-icon.png: the Hack Club
+  // rounded "h" recolored in Folsom High royal blue, served from our own domain so
+  // browsers reliably pick them up.
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

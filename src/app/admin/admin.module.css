@@ -1,0 +1,247 @@
+/* same grid-paper background as the homepage hero */
+.loginShell,
+.header {
+  color: var(--white);
+  background-color: var(--dark);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.flag {
+  display: block;
+  width: fit-content;
+  transform-origin: top left;
+}
+
+.flag img {
+  width: 112px;
+  height: auto;
+}
+
+.flag:hover,
+.flag:focus-visible {
+  animation: wave 0.5s linear infinite alternate;
+}
+
+@keyframes wave {
+  to {
+    transform: rotate(-5deg);
+  }
+}
+
+/* ---------- login ---------- */
+
+.loginShell {
+  min-height: 100vh;
+  padding-bottom: 64px;
+}
+
+.loginCard {
+  width: min(440px, calc(100% - 40px));
+  margin: 48px auto 0;
+  padding: 36px 32px 32px;
+  color: var(--black);
+  background: var(--white);
+  border-top: 8px solid var(--red);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.loginCard h1 {
+  margin: 6px 0 24px;
+  font-size: 2.25rem;
+}
+
+.loginButton {
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.loginButton:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: none;
+}
+
+.error {
+  padding: 12px 16px;
+  background: rgba(236, 55, 80, 0.1);
+  border-left: 4px solid var(--red);
+  border-radius: 4px;
+}
+
+/* ---------- dashboard ---------- */
+
+.header {
+  padding-bottom: 130px;
+}
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logout {
+  padding-top: 18px;
+}
+
+.logout button {
+  padding: 0.6em 1.25em;
+  font-size: 1rem;
+}
+
+.headline {
+  margin-top: 28px;
+}
+
+.headline :global(.eyebrow) {
+  color: var(--orange);
+}
+
+.headline h1 {
+  margin-top: 8px;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 0.95;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 56px;
+  margin: 32px 0 0;
+}
+
+.stats dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stats dd {
+  margin: 2px 0 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.body {
+  padding-bottom: 96px;
+}
+
+.tableCard {
+  margin-top: -80px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elevated);
+  overflow: hidden;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  padding: 16px 18px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+  background: var(--snow);
+  border-bottom: 1px solid var(--smoke);
+}
+
+.table td {
+  padding: 14px 18px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--smoke);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table tbody tr:hover {
+  background: var(--snow);
+}
+
+.num {
+  font-family: var(--mono);
+  color: var(--muted);
+}
+
+.name {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.email {
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.email:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.interests {
+  min-width: 220px;
+  max-width: 340px;
+  color: var(--slate);
+}
+
+.date {
+  white-space: nowrap;
+  color: var(--slate);
+}
+
+.empty {
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.empty h2 {
+  font-size: 1.75rem;
+}
+
+.empty p {
+  margin-top: 8px;
+  color: var(--slate);
+}
+
+.notice {
+  margin: 24px;
+  padding: 14px 18px;
+  background: rgba(241, 196, 15, 0.16);
+  border-left: 4px solid var(--yellow);
+  border-radius: 4px;
+}
+
+@media (max-width: 680px) {
+  .flag img {
+    width: 88px;
+  }
+
+  .logout {
+    padding-top: 14px;
+  }
+
+  .loginCard {
+    padding: 28px 22px 24px;
+  }
+}

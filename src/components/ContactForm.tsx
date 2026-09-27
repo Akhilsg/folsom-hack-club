@@ -40,7 +40,7 @@ export default function ContactForm() {
           <input name="name" required autoComplete="name" />
         </label>
         <label className={styles.field}>
-          <span>Email</span>
+          <span>Email (personal, not school)</span>
           <input name="email" type="email" required autoComplete="email" />
         </label>
       </div>
@@ -68,8 +68,8 @@ export default function ContactForm() {
 
       {opened && (
         <p className={styles.opened} role="status">
-          Your email app should&apos;ve opened with the message filled in. If it didn&apos;t, email us
-          directly at <a href={`mailto:${site.email}`}>{site.email}</a>.
+          Your email app should have opened with your message. If it didn&apos;t, email us
+          at <a href={`mailto:${site.email}`}>{site.email}</a>.
         </p>
       )}
     </form>

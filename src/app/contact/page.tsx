@@ -15,23 +15,23 @@ const { cadence, time, room } = site.meeting;
 const faqs = [
   {
     q: "Do I need to know how to code?",
-    a: "Nope. Plenty of people come in having never written a line of code. We'll get you started.",
+    a: "Nope. Lots of people join without ever having coded. We'll help you get started.",
   },
   {
     q: "Do I need a laptop?",
-    a: "It helps, but it's not required. A school Chromebook works for a lot of what we do, and if you don't have anything, let us know and we'll figure it out.",
+    a: "It helps, but you don't need one. A school Chromebook works for most things. If you don't have anything, tell us and we'll figure something out.",
   },
   {
     q: "Does it cost anything?",
-    a: "No. The club is free, and so is everything Hack Club runs for students.",
+    a: "No, it's free.",
   },
   {
     q: "The year already started. Can I still join?",
-    a: `Yes, any time. Just show up to the next meeting in ${room}.`,
+    a: `Yes, you can join any time. Just come to the next meeting in ${room}.`,
   },
   {
     q: "Can I run a workshop or help lead the club?",
-    a: "Please do. Send us a message with what you'd want to teach or help with.",
+    a: "Yes! Send us a message about what you want to teach or help with.",
   },
 ];
 
@@ -43,10 +43,10 @@ export default function ContactPage() {
         <header className={styles.header}>
           <div className="wrap">
             <p className="eyebrow">Contact</p>
-            <h1>Say hi.</h1>
+            <h1>Get in touch</h1>
             <p className={styles.lead}>
-              Questions about the club, an idea for a workshop, or want to help run things? Send us
-              a message, or just catch us in {room}.
+              Have a question, a workshop idea, or want to help out? Send us a message or come find
+              us in {room}.
             </p>
           </div>
         </header>
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
           <section className={styles.faq}>
             <p className="eyebrow">FAQ</p>
-            <h2 className="sectionTitle">Stuff people usually ask</h2>
+            <h2 className="sectionTitle">Common questions</h2>
             <div className={styles.faqList}>
               {faqs.map((faq) => (
                 <details key={faq.q} className={styles.faqItem}>

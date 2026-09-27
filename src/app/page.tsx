@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
+import InterestForm from "@/components/InterestForm";
 import Nav from "@/components/Nav";
 import NextMeeting from "@/components/NextMeeting";
 import { instagramUrl, site } from "@/lib/site";
@@ -28,17 +29,17 @@ const audiences = [
   {
     accent: "var(--red)",
     title: "Never coded before",
-    body: "Good, most of us started there too. Workshops assume zero experience, and nobody is going to make you feel dumb for asking a question.",
+    body: "That's fine, most of us hadn't either. The workshops start from the basics, and you can ask anything.",
   },
   {
     accent: "var(--blue)",
     title: "Already building stuff",
-    body: "Bring your side project. You'll get people to show it to, a second pair of eyes when it breaks, and maybe a teammate or two.",
+    body: "Bring what you're working on. You'll find people to show it to, help when it breaks, and maybe someone to build with.",
   },
   {
     accent: "var(--purple)",
-    title: "Not sure you're a “tech person”",
-    body: "Artists, musicians, robotics people, gamers, anyone who likes making things. If you're curious how stuff works, you'll fit in fine.",
+    title: "Not a “tech person”?",
+    body: "You don't have to be. If you like making things or figuring out how stuff works, you'll fit in.",
   },
 ];
 
@@ -58,8 +59,8 @@ export default function Home() {
                 <span className="gradientText">Hack Club</span>
               </h1>
               <p className={styles.lead}>
-                A student-run club at {site.school} for making things with code: websites, games,
-                bots, hardware, whatever you&apos;re into. No experience needed.
+                A student-run club at {site.school} where we make stuff with code, like websites,
+                games, bots, and hardware. You don&apos;t need any experience.
               </p>
               <div className={styles.actions}>
                 <Link href="#join" className="btn btnCta">
@@ -110,23 +111,21 @@ export default function Home() {
           <div className={`wrap ${styles.about}`}>
             <div>
               <p className="eyebrow">What we&apos;re about</p>
-              <h2 className="sectionTitle">A coding club where you actually build stuff.</h2>
+              <h2 className="sectionTitle">We meet up and build stuff.</h2>
             </div>
             <div className={styles.aboutBody}>
               <p>
-                <a href="https://hackclub.com">Hack Club</a> is a global nonprofit network of high
-                school coding clubs, run by students for students. This one is Folsom High&apos;s.
+                <a href="https://hackclub.com">Hack Club</a> is a nonprofit with student-run coding
+                clubs at high schools all over the world. This is the one at Folsom High.
               </p>
               <p>
-                Every other Monday we take over {room} after school. Some weeks someone runs a
-                short workshop, like building your first website or making a Discord bot. Other
-                weeks it&apos;s open hacking: work on whatever you want, with people nearby who can
-                help when you get stuck.
+                We meet in {room} after school every other Monday. Some weeks someone teaches a
+                short workshop, like how to make a website or a Discord bot. Other weeks you just
+                work on your own thing, and there&apos;s always someone around if you get stuck.
               </p>
               <p>
-                Being a Hack Club also plugs you into a much bigger community, with online programs
-                where teens earn hardware and stickers for projects they ship, and hackathons we can
-                go to as a group.
+                Hack Club also runs online programs where you can get free hardware and stickers for
+                finishing projects, and there are hackathons we can go to together.
               </p>
             </div>
           </div>
@@ -135,7 +134,7 @@ export default function Home() {
         <section className={`${styles.section} ${styles.who}`}>
           <div className="wrap">
             <p className="eyebrow">Who it&apos;s for</p>
-            <h2 className="sectionTitle">Honestly? Anyone at FHS.</h2>
+            <h2 className="sectionTitle">Anyone at FHS can join.</h2>
             <div className={styles.cards}>
               {audiences.map((audience) => (
                 <article
@@ -148,7 +147,7 @@ export default function Home() {
                 </article>
               ))}
             </div>
-            <p className={styles.fineprint}>Any grade, any skill level. It&apos;s free, and there&apos;s no application.</p>
+            <p className={styles.fineprint}>Any grade, any skill level. It&apos;s free and you don&apos;t have to apply.</p>
           </div>
         </section>
 
@@ -168,7 +167,7 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow">Where &amp; when</p>
-              <h2 className="sectionTitle">Every other Monday, right after school.</h2>
+              <h2 className="sectionTitle">We meet every other Monday after school.</h2>
               <dl className={styles.facts}>
                 <div>
                   <dt>When</dt>
@@ -184,10 +183,9 @@ export default function Home() {
                 </div>
               </dl>
               <p className={styles.note}>
-                Next meeting: <strong><NextMeeting /></strong>. We skip school breaks and holidays,
-                so if you&apos;re not sure it&apos;s a meeting week, check{" "}
-                <a href={instagramUrl}>@{site.instagram}</a>. Can&apos;t make it right at 3:40? Come
-                late, nobody minds.
+                The next meeting is <strong><NextMeeting /></strong>. We don&apos;t meet during
+                breaks or holidays, so check <a href={instagramUrl}>@{site.instagram}</a> if
+                you&apos;re not sure. It&apos;s fine to show up late.
               </p>
             </div>
           </div>
@@ -196,30 +194,27 @@ export default function Home() {
         <section id="join" className={styles.section}>
           <div className="wrap">
             <p className="eyebrow">How to join</p>
-            <h2 className="sectionTitle">Joining takes about a minute.</h2>
+            <h2 className="sectionTitle">It&apos;s pretty easy.</h2>
             <ol className={styles.steps}>
               <li className={styles.step}>
                 <span className={`${styles.stepNum} gradientText`}>01</span>
                 <h3>Show up to {room}</h3>
                 <p>
-                  Seriously, that&apos;s most of it. Come to any meeting, grab a seat, and say hi.
-                  Bring a laptop if you have one.
+                  Come to any meeting and say hi. Bring a laptop if you have one.
                 </p>
               </li>
               <li className={styles.step}>
                 <span className={`${styles.stepNum} gradientText`}>02</span>
                 <h3>Fill out the interest form</h3>
-                <p>So we know you&apos;re coming and can send you reminders before meetings.</p>
-                <a href={site.interestForm} className={styles.stepLink}>
-                  Open the form →
-                </a>
+                <p>This way we know you&apos;re interested and can remind you before meetings.</p>
+                <InterestForm className={styles.stepLink} label="Open the form →" />
               </li>
               <li className={styles.step}>
                 <span className={`${styles.stepNum} gradientText`}>03</span>
                 <h3>Join the Hack Club Slack</h3>
                 <p>
-                  Thousands of teenagers who code hang out there. Ask questions, share what
-                  you&apos;re making, and find things to do between meetings.
+                  It&apos;s a big group chat with thousands of teens from Hack Club. You can ask
+                  questions, share what you&apos;re working on, and find stuff to do between meetings.
                 </p>
                 <a href={site.slack} className={styles.stepLink}>
                   Join Slack →
@@ -241,7 +236,7 @@ export default function Home() {
           <div className="wrap">
             <h2>See you in {room}.</h2>
             <p>
-              {cadence}, {time}. Got questions first?
+              {cadence}, {time}. Have a question?
             </p>
             <Link href="/contact" className={`btn ${styles.ctaButton}`}>
               Get in touch
